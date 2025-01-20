@@ -233,6 +233,30 @@ h2 {
     transform: translateY(0);
   }
 }
+/* للأجهزة ذات الشاشات الصغيرة (مثل الهواتف) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .header-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* للأجهزة ذات الشاشات المتوسطة (مثل الأجهزة اللوحية) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 
 
