@@ -1,0 +1,239 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, red, black); /* Dégradé rouge vers noir */
+  color: #fff; /* Couleur de texte par défaut */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Ajout d'un léger fond transparent pour lisibilité */
+}
+
+.logo img {
+  height: 80px;
+}
+
+.header-info {
+  margin-left: 20px;
+}
+
+.header-info h1 {
+  margin: 0;
+}
+
+.contact a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.services, .private-events, .art {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.services-grid, .private-grid, .art-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.service, .event, .art-grid div {
+  width: 250px;
+  text-align: center;
+  background: #fff; /* Fond blanc pour les blocs */
+  color: #000; /* Texte noir pour contraste */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre légère */
+  padding: 10px;
+  opacity: 0; /* Initialement invisible pour animation */
+  transform: translateY(50px) scale(0.9); /* Position initiale pour l'animation */
+  animation: appear 1s ease-out forwards; /* Animation */
+}
+
+/* Ajout d'un délai pour chaque bloc */
+.service:nth-child(1), .event:nth-child(1) { animation-delay: 0.2s; }
+.service:nth-child(2), .event:nth-child(2) { animation-delay: 0.4s; }
+.service:nth-child(3), .event:nth-child(3) { animation-delay: 0.6s; }
+
+/* Animation : glissement vers le haut et zoom progressif */
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Position finale */
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Légère opacité pour contraste */
+  color: #fff;
+}
+
+.footer a {
+  color: #ff6347; /* Rouge vif */
+  text-decoration: none;
+  margin: 0 10px;
+}
+/* Images dans les blocs des sections */
+.service img, 
+.event img, 
+.art-grid img {
+  width: 100%; /* Les images prennent la largeur du bloc */
+  height: 180px; /* Hauteur fixe pour uniformiser */
+  object-fit: cover; /* Permet de recadrer sans déformation */
+  border-radius: 10px; /* Correspond aux coins arrondis du bloc */
+}
+
+/* Images spécifiques à la section .header */
+.logo img {
+  height: 80px; /* Taille fixe pour le logo */
+  width: auto; /* Maintient les proportions */
+}
+
+/* Bloc parent pour gérer un alignement parfait */
+.services-grid, .private-grid, .art-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Permet aux blocs de s'adapter sur petits écrans */
+}
+/* Général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, red, black); /* Dégradé du haut au bas */
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header-info {
+  margin-left: 20px;
+  text-align: center; /* Centre le texte */
+}
+
+.animated-title {
+  margin: 0;
+  font-size: 2rem;
+  animation: fadeIn 2s ease-in-out; /* Animation du titre */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sections */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #ff6347;
+  animation: slideIn 2s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.additional-info {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Légère opacité */
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.additional-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.additional-info ul li {
+  margin: 5px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.footer a {
+  color: #ff6347;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.info-cell {
+  background: #8B0000; /* Rouge foncé */
+  border: 1px solid #660000; /* Bordure légèrement plus foncée */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  color: #fff; /* Texte en blanc pour un bon contraste */
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.info-cell h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #FFD700; /* Titre en jaune doré pour se démarquer */
+}
+
+.info-cell p {
+  font-size: 14px;
+  color: #fff; /* Texte principal en blanc */
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
